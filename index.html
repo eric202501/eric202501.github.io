@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>自我介紹</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    let logo;
+    function change() {
+      logo = document.getElementsByClassName('logo')[0];
+      logo.style.position = 'relative';
+      logo.style.transition = 'right 1s ease-in-out';
+
+      logo.innerText ='⊂(•̀ω•́⊂ )Σ≡=─';
+      logo.style.right ='0%';
+
+      setTimeout(() => {
+      logo.style.right = '100%';
+      }, 400);
+      setTimeout(() => {
+        logo.innerText ='─=≡Σ((( つ•̀ω•́)つ';
+        logo.style.right = '0%';
+        setTimeout(() => {
+          logo.innerText ='自我介紹';
+        }, 1300);
+      }, 1200);      
+    }
+    
+    let cat;
+    function walk() {
+      cat = document.getElementsByClassName('cat')[0];
+      cat.style.position = 'absolute';
+      cat.style.transition = 'left 1s linear';
+      let position = 0;
+      cat.style.opacity = 1;
+      setInterval(() => {
+        position += 40;
+        if (position > window.outerWidth+320) {
+            cat.style.opacity = 0;
+            setTimeout(() => {
+              position = -window.outerWidth+900;
+              cat.style.left = position + 'px';
+
+            setTimeout(() => {
+              cat.style.opacity = '1'; // 讓貓再次出現
+            }, 2000);
+            }, 200);           
+        }
+        else{
+          cat.style.left = position + 'px';
+        }   
+      }, 100);
+    }
+    window.onload = walk;
+  </script>
+
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <p class="logo" onclick="change()">自我介紹</p>
+      <nav class="nav-menu">
+        <a href="https://github.com/eric202501" target="_blank"><img src="img/github-logo.png" width="30"></a>
+        <a href="https://www.facebook.com/profile.php?id=100004225659047&locale=zh_TW"target="_blank"><img src="img/images.jpg" width="40"></a>
+        <a href="https://www.instagram.com/eric.icy.0903/"target="_blank"><img src="img/Instagram.png" width="30"></a>  
+        <a href="https://hackmd.io/@U86qbAM7Qp6EYJchUWA5SA"target="_blank"><img src="img/HackMD.png" width="45"></a>  
+      </nav>
+      </nav>
+    </div>
+  </header>
+
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <img id="self-img" src="img/me.jpg" >
+      <h2>羅宣祐</h2>
+      <p>
+        <ul>
+          <li>資訊工程學系 大三 <span style="opacity: 0">快被捲死了</span></li>
+          <li>桃園中壢人</li>
+          <li>資安小白 | CTF</li>
+          <h3>興趣</h3>
+          <li>打電動</li>
+          <li>從酒精中獲得快樂</li>
+          <li>讀小說</li>
+          
+        </ul>
+      </p>
+    </div>
+  </section>
+
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2>技能</h2>
+      <div class="skills-list">
+        <div class="skill-item">
+          <img src="img/c plus plus.png">
+          <h1>C++</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/python.png">
+          <h1>Python</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/html.png">
+          <h1>HTML</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/css.png">
+          <h1>CSS</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/js.png">
+          <h1>Javascript</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/linux.png">
+          <h1>Linux</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/bash.png" style="width: 75px;">
+          <h1>bash script</h1>
+        </div>
+        <div class="skill-item">
+          <img src="img/sql.png" style="width: 75px;">
+          <h1>SQLite</h1>
+        </div>
+        <div class="skill-item" style="opacity: 0">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Project</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <a href="https://github.com/eric202501/UncleCock" target="_blank"><img src="img/P1.png"/></a>
+          <h3>影片購物平台</h3>
+          <p>
+            這是一個線上影片購物平台介面，使用者可以在此平台上購買影片，並線上觀看。
+          </p>
+        </div>
+        <div class="project-item">
+          <a href="https://github.com/eric202501/compiler-project-Mini-LISP-interpreter" target="_blank"><img src="img/P2.png"/></a>
+          <h3>Mili-lisp Interpreter</h3>
+          <p>
+            Python實作lisp語言直譯器，支援基本的 lisp 語法，使用lark套件進行lexer和parser。
+          </p>
+        </div>
+        <div class="project-item">
+          <a href="https://github.com/eric202501/Kivy-front-end" target="_blank"><img src="img/p3.png"/></a>
+          <h3>學習計畫紀錄程式</h3>
+          <p>
+            能夠簡易紀錄學習計畫，並且能夠查看自己的學習進度，提供計時功能和選擇音樂功能，使用kivy作為前端框架。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cat-section">
+    <div class="container">
+    <pre class="cat">
+      •.,¸,.•*`•.,¸¸,.•*¯.— — — — — —.
+      •.,¸,.•*`•.,¸¸,.•*¯|::::/\____/\
+      •.,¸,.•*`•.,¸¸,.•*¯|:::::( ｡OωO｡)
+      •.,¸,.•*`•.,¸¸,.•*¯ し— —し— —Ｊ
+    </pre>
+      
+    </div>
+  </section>
+
+  
+
+
+
+</body>
+</html>
+
