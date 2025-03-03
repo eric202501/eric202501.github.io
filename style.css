@@ -207,5 +207,8 @@
     .project-grid {
       grid-template-columns: 1fr;
     }
+    .cat{
+      opacity: 0;
+    }
   }
   
